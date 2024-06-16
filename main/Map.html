@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>map Message</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!--// Meta tag Keywords -->
+
+	<!-- css files -->
+	<link rel="stylesheet" href="css/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" /> <!-- Style-CSS -->
+	<link rel="stylesheet" href="css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+	<link rel="stylesheet" href="css/map.css"> <!-- MAP-CSS -->
+	<!-- //css files -->
+
+	<!-- web-fonts -->
+	<link
+		href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext"
+		rel="stylesheet">
+	<link
+		href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+		rel="stylesheet">
+	<!-- //web-fonts -->
+
+</head>
+
+<body>
+	<div class="header">
+		<nav class="navbar navbar-default">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<h1><a href="index.html">Tongji Kaleidoscope</a></h1>
+			</div>
+			<div class="top-nav-text">
+				<div class="nav-contact-w3ls"><i class="fa fa-phone" aria-hidden="true"></i>
+					<p>+86 18937082731</p>
+				</div>
+			</div>
+			<!-- navbar-header -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a class="hvr-underline-from-center active" href="index.html">Home</a></li>
+					<li><a href="map.html" class="hvr-underline-from-center">map Message</a></li>
+					<li><a href="Team.html" class="hvr-underline-from-center">Campus Team Up</a></li>
+					<li><a href="Post.html" class="hvr-underline-from-center">Campus Post</a>
+				</ul>
+			</div>
+
+			<div class="clearfix"> </div>
+		</nav>
+
+	</div>
+	<div class="banner1">
+	</div>
+	<div class="about-breadcrumb">
+		<div class="container">
+			<ul>
+				<li><a href="index.html">Home</a><i>></i></li>
+				<li>map Message</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- map section -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="left-content">
+					<div class="heading">
+						<h2 style="margin-top: 20px; margin-bottom: 20px;">校园地图漂流瓶</h2>
+						<p> 传统意义上的漂流瓶留言是会被随机的陌生人捡到的，但是这样显然缺乏更深的交流与缘分。我们将漂流瓶融入校园地图定位系统，实现定位型漂流瓶，只有走到相同地点才能捡到上一个人在此处留下的漂流瓶~在这里你可以浏览校园地图并发现同学们留下的漂流瓶消息。
+						</p>
+
+						<h5>通过点击地图上的标记，可以查看和捡取漂流瓶。</h5>
+						<div class="button-container">
+							<span>点击按钮放大或缩小地图：</span>
+							<img src="images/+.png" alt="放大" onclick="zoomIn()"
+								style="cursor:pointer; margin-left: 10px; margin-right: 10px;">
+							<img src="images/-.png" alt="缩小" onclick="zoomOut()" style="cursor:pointer;">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="right-content">
+					<h3 class="spacing">请选择所在校区~</h3>
+					<div class="campus-image-container">
+						<div class="campus-item">
+							<img src="images/spchoice.jpg" alt="四平路校区" onclick="doubleClickCampus('sipin')"
+								style="cursor:pointer;">
+							<h4 onclick="doubleClickCampus('sipin')" style="cursor:pointer;">四平路校区</h4>
+						</div>
+						<div class="campus-item">
+							<img src="images/jdchoice.jpg" alt="嘉定校区" onclick="doubleClickCampus('jiading')"
+								style="cursor:pointer;">
+							<h4 onclick="doubleClickCampus('jiading')" style="cursor:pointer;">嘉定校区</h4>
+						</div>
+					</div>
+				</div>
+			</div class="container">
+
+		</div>
+
+		<div class="row-container">
+			<h3 class="post">我该如何发帖？</h3>
+			<div class="button-container">
+				<button onclick="getCurrentLocation()">获取当前位置</button>
+			</div>
+		</div>
+		<div id="map"></div>
+	</div>
+
+	<!-- //map section -->
+
+
+	<!-- footer -->
+	<footer>
+		<div class="agileits-w3layouts-footer">
+			<div class="container">
+				<div class="col-md-4 w3-agile-grid">
+					<h5>About Us</h5>
+					<p>本项目由同济大学软件学院杨烜赫、付宝莹、霍钇澄和张凯四人协助完成，如有问题请联系邮箱2252709@tongji.edu.cn</p>
+					<div class="footer-agileinfo-social">
+						<ul>
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fa fa-rss"></i></a></li>
+							<li><a href="#"><i class="fa fa-vk"></i></a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-md-4 w3-agile-grid">
+					<h5>Address</h5>
+					<div class="w3-address">
+						<div class="w3-address-grid">
+							<div class="w3-address-left">
+								<i class="fa fa-phone" aria-hidden="true"></i>
+							</div>
+							<div class="w3-address-right">
+								<h6>Phone Number</h6>
+								<p>+86 18937082731</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="w3-address-grid">
+							<div class="w3-address-left">
+								<i class="fa fa-envelope" aria-hidden="true"></i>
+							</div>
+							<div class="w3-address-right">
+								<h6>Email Address</h6>
+								<p>Email :<a href="mailto:example@email.com"> 2252709@tongji.edu.cn</a></p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="w3-address-grid">
+							<div class="w3-address-left">
+								<i class="fa fa-map-marker" aria-hidden="true"></i>
+							</div>
+							<div class="w3-address-right">
+								<h6>Location</h6>
+								<p> 上海市嘉定区曹安公路4800号同济大学嘉定校区
+									Telephone : +86 021-65982200
+								</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+				</div>
+
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		<div class="copyright">
+			<div class="container">
+				<p>Copyright &copy; 2024.Company name All rights reserved.</p>
+			</div>
+		</div>
+	</footer>
+	<!-- //footer -->
+
+
+
+	<!-- js-scripts -->
+	<!-- js -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
+	<!-- //js -->
+	<!-- //js-scripts -->
+
+	<!-- start-smoth-scrolling -->
+	<script src="js/SmoothScroll.min.js"></script>
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+			});
+		});
+	</script>
+	<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function () {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+		});
+	</script>
+	<!-- //here ends scrolling icon -->
+	<!-- start-smoth-scrolling -->
+
+	<!-- 加载高德地图api -->
+	<script src="https://webapi.amap.com/maps?v=1.4.15&key=fcf4811fa6c64d7877b724df5b454f45"></script>
+	<script>
+		var map;
+		var minZoom = 16; // 设置最小缩放级别
+		var maxZoom = 25; // 设置最大缩放级别
+		var currentMarker;
+		var currentCampus = 'jiading'; // 默认校区
+		// 校区位置的经纬度和标记
+		var campusLocations = {
+			sipin: {
+				center: [121.50, 31.282553], zoom: 17,
+				bounds: new AMap.Bounds([121.4955, 31.2765], [121.5075, 31.2888]),
+				markers: [
+					{ position: [121.500, 31.282], title: "四平路校区 - 标记1", content: "这是四平路校区的第一个标记" },
+					{ position: [121.502, 31.283], title: "四平路校区 - 标记2", content: "这是四平路校区的第二个标记" }
+				]
+			},
+			jiading: {
+				center: [121.215252, 31.2860], zoom: 17,
+				bounds: new AMap.Bounds([121.2050, 31.2780], [121.2220, 31.2920]),
+				markers: [
+					{ position: [121.215, 31.286], title: "嘉定校区 - 标记1", content: "这是嘉定校区的第一个标记" },
+					{ position: [121.217, 31.287], title: "嘉定校区 - 标记2", content: "这是嘉定校区的第二个标记" }
+				]
+			}
+		};
+
+		// 初始化地图
+		function initMap() {
+			var initialCampus = campusLocations.sipin;
+			map = new AMap.Map('map', {
+				center: initialCampus.center, // 默认显示四平校区
+				zoom: initialCampus.zoom,
+				minZoom: minZoom,
+				maxZoom: maxZoom,
+				scrollWheel: false // 禁用滚轮缩放
+			});
+			map.setLimitBounds(initialCampus.bounds); // 示例范围
+			addMarkers(initialCampus.markers); // 添加初始校区的标记
+		}
+
+		// 获取当前位置并添加新标记
+		// 获取当前位置并添加新标记
+function getCurrentLocation() {
+    var options = {
+        enableHighAccuracy: true, // 高精度模式
+        timeout: 10000,           // 最长等待时间 10 秒
+        maximumAge: 0             // 不接受缓存的位置
+    };
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            var lat = position.coords.latitude;
+            var lon = position.coords.longitude;
+            var currentLocation = [lon, lat];
+
+            // 创建标记
+            var marker = new AMap.Marker({
+                position: currentLocation,
+                title: "您的位置",  // 确保这里设置了标题
+                map: map
+            });
+
+            // 定义信息窗口的内容
+            var contentHtml = `
+                <div>
+                    <h3>${marker.getTitle()}</h3>
+                    <p>在这里留下您的漂流瓶：</p>
+                    <textarea id="messageInput" placeholder="写下你的漂流瓶内容..."></textarea><br>
+                    <input type="file" id="imageInput" accept="image/*" onchange="previewImage(event)"><br>
+                    <img id="imagePreview" style="max-width: 100px; max-height: 100px; display: none;"><br>
+                    <button onclick="submitMessage([${marker.getPosition().lng}, ${marker.getPosition().lat}], '${marker.getTitle()}');">提交</button>
+                </div>
+            `;
+
+            // 创建并显示信息窗口
+            var infoWindow = new AMap.InfoWindow({
+                content: contentHtml,
+                offset: new AMap.Pixel(0, -20)
+            });
+
+            marker.on('click', function() {
+                infoWindow.open(map, marker.getPosition());
+            });
+
+            // 更新地图中心到当前位置
+            map.setCenter(marker.getPosition());
+        }, function (error) {
+            showError(error);
+        }, options);
+    } else {
+        alert("Geolocation is not supported by this browser.");
+    }
+}
+
+
+
+
+
+
+		// 添加标记和信息卡片函数
+		function addMarkers(markers) {
+			map.clearMap(); // 清除地图上现有的标记
+			markers.forEach(function (marker) {
+				var amapMarker = new AMap.Marker({
+					position: marker.position,
+					title: marker.title,
+					map: map
+				});
+
+				var contentHtml = `
+    <div>
+        <h3>${marker.title}</h3>
+        <p>${marker.content}</p>
+        <textarea id="messageInput" placeholder="写下你的漂流瓶内容..."></textarea><br>
+        <input type="file" id="imageInput" accept="image/*" onchange="previewImage(event)"><br>
+        <img id="imagePreview" style="max-width: 100px; max-height: 100px; display: none;"><br>
+        <button onclick="submitMessage('${marker.position}','${marker.title}');">提交</button>
+    </div>
+`;
+
+
+
+
+
+
+				var infoWindow = new AMap.InfoWindow({
+					content: contentHtml,
+					offset: new AMap.Pixel(0, -30)
+				});
+
+				// 添加点击标记时打开信息窗口的事件
+				amapMarker.on('click', function () {
+					infoWindow.open(map, amapMarker.getPosition());
+				});
+			});
+		}
+		function previewImage(event) {
+    var file = event.target.files[0]; // Get the file from the input
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+        var img = new Image(); // Create a new image object
+
+        img.onload = function() {
+            // Get dimensions for resizing
+            var maxWidth = 400;  // Set the maximum width
+            var maxHeight = 400; // Set the maximum height
+            var width = img.width;
+            var height = img.height;
+
+            // Calculate the new dimensions
+            if (width > height) {
+                if (width > maxWidth) {
+                    height *= maxWidth / width;
+                    width = maxWidth;
+                }
+            } else {
+                if (height > maxHeight) {
+                    width *= maxHeight / height;
+                    height = maxHeight;
+                }
+            }
+
+            // Draw the resized image on canvas
+            var canvas = document.getElementById('canvas');
+            canvas.width = width;
+            canvas.height = height;
+            var ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, width, height);
+
+            // Set the canvas image as source for the img tag
+            var imagePreview = document.getElementById('imagePreview');
+            imagePreview.src = canvas.toDataURL('image/png');
+            imagePreview.style.display = 'block'; // Make sure the image is visible
+        };
+
+        img.src = e.target.result; // Set the source so it begins loading
+    };
+
+    reader.readAsDataURL(file); // Read the file as a Data URL
+}
+
+
+		// 漂流瓶内容设计
+		function submitMessage(position, title) {
+			var messageContent = document.getElementById('messageInput').value;
+			var imageContent = document.getElementById('imagePreview').src;
+
+			console.log('Message submitted for', title, 'at', position, ':', messageContent, 'Image:', imageContent);
+
+			alert('漂流瓶内容已提交: ' + messageContent);
+		}
+
+		// 切换到指定校区   
+		function showCampus(campus) {
+			var location = campusLocations[campus];
+			if (location) {
+				console.log("切换到", campus, location); // 调试信息
+				map.clearMap(); // 清除之前的所有标记等
+				map.setZoomAndCenter(location.zoom, location.center);
+				map.setLimitBounds(location.bounds);
+
+				setTimeout(function () {
+					addMarkers(location.markers); // 添加相应校区的标记
+				}, 10); // 延迟确保地图已更新
+			} else {
+				console.log("未找到校区信息:", campus); // 调试信息
+			}
+		}
+		//防止更新不完全进行二次调用
+		function doubleClickCampus(campus) {
+			showCampus(campus); // 第一次调用
+			setTimeout(function () {
+				showCampus(campus); // 10毫秒后第二次调用
+			}, 10);
+		}
+
+		// 放大地图
+		function zoomIn() {
+			var currentZoom = map.getZoom();
+			if (currentZoom < maxZoom) {
+				map.zoomIn();
+			} else {
+				console.log("已达到最大缩放级别");
+			}
+		}
+
+		// 缩小地图
+		function zoomOut() {
+			var currentZoom = map.getZoom();
+			if (currentZoom > minZoom) {
+				map.zoomOut();
+			} else {
+				console.log("已达到最小缩放级别");
+			}
+		}
+		// 错误处理
+		function showError(error) {
+			switch (error.code) {
+				case error.PERMISSION_DENIED:
+					alert("用户拒绝了获取位置信息的请求。");
+					break;
+				case error.POSITION_UNAVAILABLE:
+					alert("位置信息不可用。");
+					break;
+				case error.TIMEOUT:
+					alert("请求用户位置超时。");
+					break;
+				case error.UNKNOWN_ERROR:
+					alert("未知错误发生。");
+					break;
+			}
+		}
+		// 确保地图API加载完成后初始化地图
+		window.onload = initMap;
+		
+	</script>
+
+	<!-- Code injected by live-server -->
+	<script>
+		// <![CDATA[  <-- For SVG support
+		if ('WebSocket' in window) {
+			(function () {
+				function refreshCSS() {
+					var sheets = [].slice.call(document.getElementsByTagName("link"));
+					var head = document.getElementsByTagName("head")[0];
+					for (var i = 0; i < sheets.length; ++i) {
+						var elem = sheets[i];
+						var parent = elem.parentElement || head;
+						parent.removeChild(elem);
+						var rel = elem.rel;
+						if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+							var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+							elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+						}
+						parent.appendChild(elem);
+					}
+				}
+				var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+				var address = protocol + window.location.host + window.location.pathname + '/ws';
+				var socket = new WebSocket(address);
+				socket.onmessage = function (msg) {
+					if (msg.data == 'reload') window.location.reload();
+					else if (msg.data == 'refreshcss') refreshCSS();
+				};
+				if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+					console.log('Live reload enabled.');
+					sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+				}
+			})();
+		}
+		else {
+			console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+		}
+		// ]]>
+	</script>
+</body>
+
+</html>

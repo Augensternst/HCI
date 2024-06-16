@@ -1,0 +1,388 @@
+/*第二屏 开始*/
+.fp-tablecell {
+    width: 90%;
+    height: 52rem;
+    position: relative;
+    margin: 0 auto;
+    padding-top: .1px;
+    font-family: "Microsoft YaHei";
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.warp-box {
+    width: 100%;
+    height: 100%;
+    position: relative
+}
+
+.warp {
+    display: table;
+    margin: 0 auto;
+    height: 100%;
+    position: relative
+}
+
+.fp-tablecell .single-news:hover .news-head img {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    transform: scale(1.2)
+}
+
+.fp-tablecell .single-news:hover .news-head:before {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    transform: translateY(0)
+}
+
+.fp-tablecell .single-news:hover .link {
+    top: 50%;
+    opacity: 1;
+    visibility: visible
+}
+
+.fp-tablecell .news-head {
+    position: relative;
+    overflow: hidden
+}
+
+.fp-tablecell .news-head::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(255, 255, 255, .51);
+    content: "";
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    transition: all .4s ease;
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    transform: translateY(-100%);
+    z-index: 8
+}
+
+.fp-tablecell .news-head img {
+    width: 100%;
+    height: 24.4rem;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    transition: all .4s ease
+}
+
+.fp-tablecell .link {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0.4rem;
+    height: 0.4rem;
+    background: #333;
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+    left: 50%;
+    margin: -20px 0 0 -20px;
+    line-height: 40px;
+    z-index: 9;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    transition: all .4s ease
+}
+
+.fp-tablecell .news-content {
+    padding: 30px 15px
+}
+
+.fp-tablecell .news-content h4 {
+    margin-bottom: 10px
+}
+
+.fp-tablecell .news-content .date {
+    color: #bbb;
+    font-size: 12px;
+    margin-bottom: 15px
+}
+
+.fp-tablecell .news-content p {
+    color: #999;
+    height: 55px;
+    overflow: hidden
+}
+
+.fp-tablecell .news-content .btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 0;
+    background: 0 0;
+    border: none;
+    color: #29B6F6;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    transition: all .4s ease
+}
+
+.fp-tablecell .news-content .btn:hover {
+    color: #333
+}
+
+.fp-tablecell .new-article {
+    text-align: center
+}
+
+.fp-tablecell .inner {
+    display: inline-block;
+    vertical-align: middle
+}
+
+.fp-tablecell .new-article h1 {
+    font-size: 32px;
+    padding-bottom: 30px;
+    position: relative;
+    font-weight: 500
+}
+
+.fp-tablecell .new-article h1:after {
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    content: "";
+    left: 50%;
+    margin-left: -25px;
+    bottom: -1px;
+    background: #00C2FF
+}
+
+.fp-tablecell .new-article p {
+    margin-top: 20px;
+    line-height: 22px;
+    color: #888
+}
+
+.fp-tablecell .warp-box {
+    width: 75rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.fp-tablecell .fp-item {
+    width: 35rem;
+    height: 20rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.fp-tablecell .fp-item img {
+    width: 100%;
+    height: 100%;
+}
+
+.fp-tablecell .fp-item .item_name-box {
+    width: 100%;
+    height: 5rem;
+    background: #131313;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: 0;
+    cursor: pointer;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fp-tablecell .fp-item .item_name-box p {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.fp-tablecell—view {
+    max-width: 75%;
+    padding: 1em;
+    background: #eee;
+    display: none;
+    position: relative;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    color: #000;
+    border-radius: 2rem;
+    background: rgba(0, 0, 0, 0.54);
+
+}
+
+.fp-tablecell—view .item-close {
+    cursor: pointer;
+    right: 5px;
+    top: 5px;
+    position: absolute;
+    background: #222;
+    color: #fff;
+    border-radius: 100%;
+    font-size: 14px;
+    height: 24px;
+    line-height: 22px;
+    text-align: center;
+    width: 24px;
+}
+
+.fp-tablecell—view .container {
+    margin: 150px auto;
+    max-width: 960px;
+    text-align: center;
+}
+
+/* 弹窗样式 */
+.tablecell—view-box{
+    width: 80rem;
+    height: 50rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 2.8rem;
+}
+.tablecell—view-box .form-group{
+    width: 50rem;
+    height: 7rem;
+    margin-top: 2rem;
+
+}
+.tablecell—view-box .form-group label{
+    font-size: 1.8rem;
+    color: #fff;
+}
+.tablecell—view-box .form-group input{
+    background: #fff;
+    border: 0;
+    border-radius: 10rem;
+    border: 1px solid #fff !important;
+    font-size: 1.5rem !important;
+}
+.submit-btn-col{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.tablecell—view-box .submit-btn{
+    padding: 1rem 2rem;
+    border-radius: 1.1rem;
+    background: #e01f3d;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: none;
+    margin-top: 2rem;
+}
+.tablecell—view-box .close-btn{
+    padding: 1rem 2rem;
+    border-radius: 1.1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 1.2rem 2.2rem;
+    color:#e01f3d;
+    background: #fff;
+    margin-top: 2rem;
+}
+.content-table-box {
+    width: 600px;
+    height: 600px;
+    display: inline-block;
+    margin-top: 50px;
+  }
+
+  /*-- //bootstrap-modal-pop-up --*/
+
+.tablecell—view-box input[type="text"], .tablecell—view-box input[type="number"], .tablecell—view-box textarea,.tablecell—view-box .form-control ,
+.tablecell—view-box input[type="datetime-local"]
+{
+    border: none;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    outline: none;
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.tablecell—view-box span {
+    color: #23B684;
+}
+.tablecell—view-box h2{
+    color: #e01f3d;
+}
+
+.tablecell—view-box input[type="submit"]:hover {
+    background: #23B684;
+}
+.tablecell—view-box  tr{
+    background: transparent !important;
+    color: #fff;
+    font-size: 1.5rem;
+}
+.tablecell—view-box .thead-dark tr{
+    background: #000 !important;
+    color: #fff;
+}
+
+.tablecell—view-box button{
+    background: rgba(0,0,0,.54);
+}
+.tablecell—view-box .close-submit{
+    width: 11rem;
+    padding: 12px 0px;
+    font-size: 15px;
+    color: #fff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    background: #e01f3d;
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    transition: 0.5s all;
+    text-align: center;
+    border-radius: 0.2rem;
+    cursor: pointer;
+}
+.tablecell—view-box .close-submit:hover{
+    background: #23B684;
+}
+  /* 匹配人列表 */
+  #item4 ul{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    display: none;
+    border-radius: 0.2rem;
+    background: #fff;
+  }
+  #item4 ul li{
+    padding: 0.5rem;
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+    color: #e01f3d;
+    font-size: 1.8rem;
+  }
+
+  

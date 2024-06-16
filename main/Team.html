@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Campus Team Up</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar(){ window.scrollTo(0,1); }
+    </script>
+    <!--// Meta tag Keywords -->
+
+    <link rel="stylesheet" href="css/lightbox.css"> <!-- team-CSS -->
+    <!-- css files -->
+    <link rel="stylesheet" href="css/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" /> <!-- Style-CSS -->
+    <link rel="stylesheet" href="css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+    <link rel="stylesheet" href="css/animate.css"> <!-- 校园组局 -->
+    <link rel="stylesheet" href="css/bg.css"> <!-- 校园组局 -->
+    <link rel="stylesheet" href="css/loading.css"> <!-- loading -->
+    <!-- //css files -->
+
+    <!-- web-fonts -->
+    <link
+        href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext"
+        rel="stylesheet">
+    <link
+        href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+        rel="stylesheet">
+    <!-- //web-fonts -->
+    <style>
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .team-box {
+            width: 48%;
+            height: 200px;
+            background-color: rgba(0, 0, 0, 0.7);
+            /* 半透明黑色背景 */
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        .team-box:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+            /* 深色半透明背景 */
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .heading h3 {
+            margin-top: 40px;
+            /* 向下移动标题 */
+            color: white;
+        }
+
+        .team {
+            background: url('./images/hyc_bg1.jpg') no-repeat center center;
+            /* 设置背景图片 */
+            background-size: cover;
+            padding: 50px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1><a href="index.html">Tongji Kaleidoscope</a></h1>
+            </div>
+            <div class="top-nav-text">
+                <div class="nav-contact-w3ls"><i class="fa fa-phone" aria-hidden="true"></i>
+                    <p>+86 18937082731</p>
+                </div>
+            </div>
+            <!-- navbar-header -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="hvr-underline-from-center active" href="index.html">Home</a></li>
+                    <li><a href="Map.html" class="hvr-underline-from-center">Map Message</a></li>
+                    <li><a href="Team.html" class="hvr-underline-from-center">Campus Team Up</a></li>
+                    <li><a href="Post.html" class="hvr-underline-from-center">Campus Post</a></li>
+                </ul>
+            </div>
+
+            <div class="clearfix"> </div>
+        </nav>
+    </div>
+    <div class="banner1"></div>
+    <div class="about-breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a><i>></i></li>
+                <li>Campus Team Up</li>
+            </ul>
+        </div>
+    </div>
+    <!-- team-inner-page -->
+    <div id="team" class="team">
+        <div class="heading">
+            <h3>校园组局</h3>
+        </div>
+        <!-- 4格item -->
+        <div class="section" id="section2">
+            <div class="fp-tablecell">
+                <div class="warp-box">
+                    <div class="fp-item col wow fadeInUp" data-target="push" style="padding: 0 10px">
+                        <div class="single-news">
+                            <div class="news-head">
+                                <img src="images/bg2.jpg">
+                                <div class="item_name-box">
+                                    <p>发起组局</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="view2" class="fp-item col wow fadeInUp" data-target="view" data-wow-delay=".2s"
+                        style="padding: 0 10px">
+                        <div class="single-news">
+                            <div class="news-head">
+                                <img src="images/bg3.jpg">
+                                <div class="item_name-box">
+                                    <p>查看组局</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="view3" class="fp-item col wow fadeInUp" data-target="myview" data-wow-delay=".4s"
+                        style="padding: 0 10px">
+                        <div class="single-news">
+                            <div class="news-head">
+                                <img src="images/bg4.jpg">
+                                <div class="item_name-box">
+                                    <p>我的组局</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="view4" class="fp-item col wow fadeInUp" data-target="pipei" data-wow-delay=".4s"
+                        style="padding: 0 10px">
+                        <div class="single-news">
+                            <div class="news-head">
+                                <img src="images/bg7.jpg">
+                                <div class="item_name-box">
+                                    <p>随机匹配</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 发起组局弹窗 -->
+        <div id="item1" class="fp-tablecell—view">
+            <div class="tablecell—view-box">
+                <h2>发起组局</h2>
+                <form id="launchForm">
+                    <div class="form-group">
+                        <label for="activityName">活动名称</label>
+                        <input type="text" id="activityName" name="activityName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="activityTime">活动时间</label>
+                        <input type="datetime-local" id="activityTime" name="activityTime" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="totalParticipants">活动人数</label>
+                        <input type="number" id="totalParticipants" name="totalParticipants" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="currentParticipants">已有人数</label>
+                        <input type="number" id="currentParticipants" name="currentParticipants" required>
+                    </div>
+                    <div class="submit-btn-col">
+                        <button class="submit-btn" type="submit">完成</button>
+                        <div class="close-btn js-popup-close">取消</div>
+                    </div>
+                </form>
+            </div>
+            <b class="item-close js-popup-close">x</b>
+        </div>
+        <!-- 查看组局 弹窗-->
+        <div id="item2" class="fp-tablecell—view">
+            <div class="tablecell—view-box">
+                <h2>现有组局</h2>
+                <div class="content-table-box">
+                    <!-- <input type="text" id="lin" placeholder="请输入需要搜索的内容"> -->
+                    <input type="text" class="form-control names" id="lin" placeholder="请输入需要搜索的内容">
+                    <table class="table table-striped table-bordered" id="table-1">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>发起人</th>
+                                <th>学号</th>
+                                <th>活动名称</th>
+                                <th>活动地点</th>
+                                <th>活动时间</th>
+                                <th>人数</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>张凯</td>
+                                <td>2211111</td>
+                                <td>乒乓球</td>
+                                <td>嘉定体育馆</td>
+                                <td>2024.6.12 14:00</td>
+                                <td>1</td>
+                                <td><button class="push-btn">加入</button></td>
+                            </tr>
+                            <tr>
+                                <td>付宝莹</td>
+                                <td>2222222</td>
+                                <td>虹桥拼车</td>
+                                <td>学校正门</td>
+                                <td>2024.6.14 16:00</td>
+                                <td>4</td>
+                                <td><button class="push-btn">加入</button></td>
+                            </tr>
+                            <tr>
+                                <td>杨烜赫</td>
+                                <td>2233333</td>
+                                <td>剧本杀</td>
+                                <td>嘉实广场</td>
+                                <td>2024.6.12 19:30</td>
+                                <td>7</td>
+                                <td><button class="push-btn">加入</button></td>
+                            </tr>
+                            <tr>
+                                <td>霍钇澄</td>
+                                <td>2244444</td>
+                                <td>复习</td>
+                                <td>嘉图14楼</td>
+                                <td>2024.6.12 8:00</td>
+                                <td>4</td>
+                                <td><button class="push-btn">加入</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="close-submit js-popup-close">关闭</div>
+                </div>
+            </div>
+            <b class="item-close js-popup-close">x</b>
+        </div>
+         <!-- 我的组局 弹窗-->
+        <div id="item3" class="fp-tablecell—view">
+            <div class="tablecell—view-box">
+                <h2>我的组局</h2>
+                <div class="content-table-box">
+                    <input type="text" class="form-control names" id="lin2" placeholder="请输入需要搜索的内容">
+                    <table class="table table-striped table-bordered" id="table-2">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>发起人</th>
+                                <th>学号</th>
+                                <th>活动名称</th>
+                                <th>活动地点</th>
+                                <th>活动时间</th>
+                                <th>人数</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>张凯</td>
+                                <td>2211111</td>
+                                <td>乒乓球</td>
+                                <td>嘉定体育馆</td>
+                                <td>2024.6.12 14:00</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>付宝莹</td>
+                                <td>2222222</td>
+                                <td>虹桥拼车</td>
+                                <td>学校正门</td>
+                                <td>2024.6.14 16:00</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>杨烜赫</td>
+                                <td>2233333</td>
+                                <td>剧本杀</td>
+                                <td>嘉实广场</td>
+                                <td>2024.6.12 19:30</td>
+                                <td>7</td>
+                            </tr>
+                            <tr>
+                                <td>霍钇澄</td>
+                                <td>2244444</td>
+                                <td>复习</td>
+                                <td>嘉图14楼</td>
+                                <td>2024.6.12 8:00</td>
+                                <td>4</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <b class="item-close js-popup-close">x</b>
+        </div>
+        <!-- 随机匹配 弹窗-->
+        <div id="item4" class="fp-tablecell—view">
+            <div class="tablecell—view-box">
+                <h2>随机匹配</h2>
+                <div class="content-table-box">
+                    <table class="table table-striped table-bordered" id="table-1">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>活动名称</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>跑步刷锻</td>
+                                <td><button class="push-pipei">匹配</button></td>
+                            </tr>
+                            <tr>
+                                <td>乒乓球</td>
+                                <td><button class="push-pipei">匹配</button></td>
+                            </tr>
+                            <tr>
+                                <td>羽毛球</td>
+                                <td><button class="push-pipei">匹配</button></td>
+                            </tr>
+                            <tr>
+                                <td>吃饭</td>
+                                <td><button class="push-pipei">匹配</button></td>
+                            </tr>
+                            <tr>
+                                <td>散步</td>
+                                <td><button class="push-pipei">匹配</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul class="item4_ul wow fadeInUp" data-wow-delay=".2s">
+                        <li>匹配人员:</li>
+                        <li>霍钇澄</li>
+                    </ul>
+                </div>
+            </div>
+            <b class="item-close js-popup-close">x</b>
+        </div>
+    </div>
+    <!-- //team-inner-page -->
+    <!-- footer -->
+    <footer>
+        <div class="agileits-w3layouts-footer">
+            <div class="container">
+                <div class="col-md-4 w3-agile-grid">
+                    <h5>About Us</h5>
+                    <p>本项目由同济大学软件学院杨烜赫、付宝莹、霍钇澄和张凯四人协助完成，如有问题请联系邮箱2252709@tongji.edu.cn</p>
+                    <div class="footer-agileinfo-social">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                            <li><a href="#"><i class="fa fa-vk"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-4 w3-agile-grid">
+                    <h5>Address</h5>
+                    <div class="w3-address">
+                        <div class="w3-address-grid">
+                            <div class="w3-address-left">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                            </div>
+                            <div class="w3-address-right">
+                                <h6>Phone Number</h6>
+                                <p>+86 18937082731</p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="w3-address-grid">
+                            <div class="w3-address-left">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </div>
+                            <div class="w3-address-right">
+                                <h6>Email Address</h6>
+                                <p>Email :<a href="mailto:example@email.com"> 2252709@tongji.edu.cn</a></p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="w3-address-grid">
+                            <div class="w3-address-left">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            </div>
+                            <div class="w3-address-right">
+                                <h6>Location</h6>
+                                <p> 上海市嘉定区曹安公路4800号同济大学嘉定校区
+                                    Telephone : +86 021-65982200
+                                </p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p>Copyright &copy; 2024.Company name All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+
+    <!-- js-scripts -->
+    <!-- js -->
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
+    <script src="js/jquery.popup.js"></script>
+    <script src="js/loading.js"></script>
+    <script src="js/lin_search.js"></script>
+    <script>
+
+        let fpItemType = ""
+        jQuery(document).ready(function ($) {
+            // 判断点击哪一个item
+            $('.fp-item').on('click', function (e) {
+                let target = $(this).data('target');
+                switch (target) {
+                    case 'push':
+                        fpItemType = "#item1"
+                        break;
+                    case 'view':
+                        fpItemType = "#item2"
+                        break;
+                    case 'myview':
+                        fpItemType = "#item3"
+                        break;
+                    case 'pipei':
+                        fpItemType = "#item4"
+                        break;
+                    default:
+                        fpItemType = "#item1"
+                        break;
+                }
+                // 拉起对于弹窗
+                $(fpItemType).popup({
+                    time: 1000,
+                    classAnimateShow: 'flipInX',
+                    classAnimateHide: 'hinge',
+                    onPopupClose: function e() {
+                        // console.log('0')
+                    },
+                    onPopupInit: function e() {
+                        // console.log('1')
+                    }
+                });
+            });
+            // 查询组局搜索
+            $("#lin").on('keyup', function () {
+                var table1 = $("#table-1");
+                var input = $(this);
+                new Search(table1, input, '')
+
+            });
+            // 查询我的组局搜索
+            $("#lin2").on('keyup', function () {
+                var table1 = $("#table-2");
+                var input = $(this);
+                new Search(table1, input, '')
+
+            });
+            $(".push-btn").on('click', function () {
+                alert('加入成功')
+            });
+            $(".push-pipei").on('click', function () {
+                loading1()
+            });
+            function loading1() {
+                $('.item4_ul').css('display','none')
+                $('#item4').loading({
+                    loadingWidth: 240,
+                    title: '请稍等!',
+                    name: 'test',
+                    discription: '正在加速匹配中...',
+                    direction: 'column',
+                    type: 'origin',
+                    // originBg:'#71EA71',
+                    originDivWidth: 40,
+                    originDivHeight: 40,
+                    originWidth: 6,
+                    originHeight: 6,
+                    smallLoading: false,
+                    loadingMaskBg: 'rgba(0,0,0,0.2)'
+                });
+                setTimeout(function () {
+                    removeLoading('test');
+                    $('.item4_ul').css('display','flex')
+                }, 3000);
+            }
+        });
+    </script>
+    <!-- //js -->
+    <!-- //js-scripts -->
+
+    <!--script for team-->
+    <script src="js/lightbox-plus-jquery.min.js"> </script>
+    <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#horizontalTab').easyResponsiveTabs({
+                type: 'default', //Types: default, vertical, accordion           
+                width: 'auto', //auto or any width like 600px
+                fit: true   // 100% fit in a container
+            });
+        });        
+    </script>
+    <!--//script for team-->
+
+    <!-- start-smoth-scrolling -->
+    <script src="js/SmoothScroll.min.js"></script>
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <!-- here stars scrolling icon -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+                var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear' 
+                };
+            */
+
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+        });
+    </script>
+    <!-- //here ends scrolling icon -->
+    <!-- start-smoth-scrolling -->
+
+    <script type="text/javascript">
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("launch-team");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        // btn.onclick = function () {
+        //     modal.style.display = "block";
+        // }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Form submission
+        document.getElementById('launchForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert("组局成功");
+            modal.style.display = "none";
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>

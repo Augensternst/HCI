@@ -1,0 +1,55 @@
+#map {
+    height: 600px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.heading p {
+    margin-bottom: 20px;
+    /* 设置段落底部的空行 */
+}
+
+.heading h5 {
+    margin-bottom: 25px;
+    /* 设置标题底部的空行 */
+}
+
+.campus-image-container {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.campus-item {
+    text-align: center;
+    flex: 1;
+}
+
+.campus-item img {
+    max-width: 100%;
+    /* 确保图片不会超出容器 */
+    height: auto;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    /* 垂直居中对齐 */
+    margin-bottom: 20px;
+}
+
+.button-container span {
+    margin-right: 10px;
+    /* 为文本和图像之间添加一些间距 */
+}
+
+.button-container img {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.spacing {
+    margin-top: 20px;
+}

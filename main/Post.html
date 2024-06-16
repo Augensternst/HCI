@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Campus Post</title>
+<!-- Meta tag Keywords -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--// Meta tag Keywords -->
+
+<!-- css files -->
+<link rel="stylesheet" href="css/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
+<link rel="stylesheet" href="css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+
+<!-- 分类style -->
+<style>
+	body {
+		background: url('images/campus.png') no-repeat center center fixed;
+		background-size: cover;
+		backdrop-filter: blur(5px);
+	}
+	.category-list {
+		background-color: rgba(255, 255, 255, 0.8);
+		padding: 20px;
+		border-radius: 10px;
+	}
+	.category-title {
+		font-size: 1.5rem;
+		margin-bottom: 10px;
+	}
+	.category-item {
+		margin-bottom: 15px;
+	}
+	.category-item i {
+		margin-right: 10px;
+	}
+	
+</style>
+
+<!-- 发帖style -->
+<style>
+	body {
+		font-family: Arial, sans-serif;
+		margin: 0;
+		padding: 0;
+		background-color: #f5f5f5;
+	}
+
+	.modal {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
+		justify-content: center;
+		align-items: center;
+	}
+
+	.modal-content {
+		background-color: white;
+		padding: 20px;
+		border-radius: 8px;
+		width: 80%;
+		max-width: 500px;
+		position: relative;
+	}
+
+	.close-modal-btn {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		background: none;
+		border: none;
+		font-size: 20px;
+		cursor: pointer;
+	}
+
+	#post-form label {
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	#post-form input,
+	#post-form textarea,
+	#post-form button {
+		width: 100%;
+		padding: 10px;
+		margin-bottom: 10px;
+		border-radius: 4px;
+		border: 1px solid #ccc;
+	}
+
+	#post-form button {
+		background-color: #007bff;
+		color: white;
+		border: none;
+		cursor: pointer;
+	}
+
+	#post-form button:hover {
+		background-color: #0056b3;
+	}
+
+	#cancel-btn {
+		background-color: #dc3545;
+	}
+
+	#cancel-btn:hover {
+		background-color: #c82333;
+	}
+
+	.container {
+		position: relative;
+	}
+
+	#open-modal-btn {
+		position: fixed;
+		bottom: 550px;
+		right: 50px;
+		background-color: #007bff;
+		color: white;
+		border: none;
+		border-radius: 50%;
+		width: 50px;
+		height: 50px;
+		font-size: 24px;
+		cursor: pointer;
+		z-index: 1;
+	}
+</style>
+
+<!-- 帖子列表功能展示 -->
+<style>
+	body {
+		background: url(images/campus.png) no-repeat center center fixed;
+		background-size: cover;
+		backdrop-filter: blur(5px);
+	}
+	.post-list {
+		background-color: rgba(255, 255, 255, 0.8);
+		padding: 20px;
+		border-radius: 10px;
+		margin: 20px auto;
+		max-width: 800px;
+		max-height: 600px; /* 设置最大高度 */
+        overflow-y: auto; /* 添加垂直滚动条 */
+	}
+	.post-item {
+		border-bottom: 1px solid #ddd;
+		padding: 10px 0;
+	}
+	.post-item:last-child {
+		border-bottom: none;
+	}
+	.post-title {
+		font-size: 3rem;
+		font-weight: bold;
+	}
+	.post-info {
+		color: #777;
+		font-size: 1.5rem;
+	}
+	.post-images img {
+		width: 100px;
+		height: 100px;
+		object-fit: cover;
+		margin-right: 10px;
+	}
+	.post-images {
+		display: flex;
+	}
+	.post-hot {
+		color: red;
+		font-size: 1rem;
+		margin-left: 10px;
+	}
+	
+</style>
+<!-- //css files -->
+
+<!-- web-fonts -->
+<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+<!-- //web-fonts -->
+</head>
+<body>
+	<div class="header">
+		<nav class="navbar navbar-default">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<h1><a href="index.html">Tongji Kaleidoscope</a></h1>
+					</div>
+					<div class="top-nav-text">
+						<div class="nav-contact-w3ls"><i class="fa fa-phone" aria-hidden="true"></i><p>+86 18937082731</p></div> 
+					</div>
+					<!-- navbar-header -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a class="hvr-underline-from-center active" href="index.html">Home</a></li>
+							<li><a href="Map.html" class="hvr-underline-from-center">Map Message</a></li>
+							<li><a href="Team.html" class="hvr-underline-from-center">Campus Team Up</a></li>
+							<li><a href="Post.html" class="hvr-underline-from-center">Campus Post</a>
+						</ul>
+					</div>
+
+					<div class="clearfix"> </div>	
+				</nav>
+	
+	</div>
+<div class="banner1">
+</div>
+<div class="about-breadcrumb">
+	<div class="container">
+		<ul>
+			<li><a href="index.html">Home</a><i>></i></li>
+			<li>Campus Post</li>
+		</ul>
+	</div>
+</div>
+<!-- post page -->
+<div id="post" class="post">
+    <div class="heading">
+        <h3 style="margin-top: 80px; margin-bottom: 80px;">交互性校园帖</h3>
+    </div>
+	
+	<!-- 分类内容 -->
+	<div class="container mt-5 leftcategory">
+        <div class="category-list">
+            <div class="category-title">贴吧精选专题</div>
+            <div class="category-item">
+                <a href="#">高校精选专题</a>
+            </div>
+            <hr>
+            <div class="category-title">贴吧分类</div>
+            <div class="category-item">
+                <i class="fas fa-star"></i>
+                <a href="#">娱乐明星</a>
+                <p>CP 娱乐明星话题 导演 时尚人物 明星 粉丝组织 网络红人</p>
+            </div>
+            <div class="category-item">
+                <i class="fas fa-basketball-ball"></i>
+                <a href="#">体育</a>
+                <p>足球 篮球 NBA CBA 乒乓球 网球 舞蹈 健身</p>
+            </div>
+            <div class="category-item">
+                <i class="fas fa-book"></i>
+                <a href="#">小说</a>
+                <p>奇幻 言情 灵异 穿越 连载 修真 历史 架空文</p>
+            </div>
+            <div class="category-item">
+                <i class="fas fa-home"></i>
+                <a href="#">生活家</a>
+                <p>小而美 DIY 美食 摄影 旅行 变美 留学移民 文玩</p>
+            </div>
+            <div class="category-item">
+                <i class="fas fa-gamepad"></i>
+                <a href="#">游戏</a>
+                <p>手机游戏 桌游与休闲游戏 游戏直播及平台 游戏交易及功能</p>
+            </div>
+            <div class="category-item">
+                <i class="fas fa-paw"></i>
+                <a href="#">萌宠</a>
+                <p>萌宠 萌莉 重口味 吐槽 恐怖</p>
+            </div>
+            <div class="category-item">
+                <i class="fas fa-heart"></i>
+                <a href="#">动漫宅</a>
+                <p>日本动漫 国产动漫 欧美动漫 搞笑漫画 热血动漫 推理 声优</p>
+            </div>
+        </div>
+    </div>
+
+	<!-- 发帖内容 -->
+	<div class="container">
+        <button id="open-modal-btn">+</button>
+        <div id="post-modal" class="modal">
+            <div class="modal-content">
+                <button id="close-modal-btn">&times;</button>
+                <h2>发布新帖</h2>
+                <form id="post-form">
+                    <label for="post-title">标题：</label>
+                    <input type="text" id="post-title" name="post-title" required>
+                    <label for="post-content">内容：</label>
+                    <textarea id="post-content" name="post-content" required></textarea>
+                    <button type="submit">发布</button>
+                    <button type="button" id="cancel-btn">取消</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('open-modal-btn').addEventListener('click', function() {
+            document.getElementById('post-modal').style.display = 'flex';
+        });
+
+        document.getElementById('close-modal-btn').addEventListener('click', function() {
+            document.getElementById('post-modal').style.display = 'none';
+        });
+
+        document.getElementById('cancel-btn').addEventListener('click', function() {
+            document.getElementById('post-modal').style.display = 'none';
+        });
+
+        document.getElementById('post-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const title = document.getElementById('post-title').value;
+            const content = document.getElementById('post-content').value;
+            const newPost = document.createElement('div');
+            newPost.classList.add('post');
+            newPost.innerHTML = `<h3>${title}</h3><p>${content}</p>`;
+            document.body.appendChild(newPost);
+            document.getElementById('post-modal').style.display = 'none';
+        });
+    </script>
+
+	<!-- 帖子列表 -->
+	<div class="container mt-5 nextcategory">
+        <div class="post-list">
+            <div class="post-item">
+                <div class="post-title">高等数学吧</div>
+                <div class="post-info">
+                    <span><a href="#">微分学与积分学</a>:微分中值定理</span>
+                    <span class="post-hot">1457</span>
+                </div>
+                <div class="post-info">作业解法如图所示：</div>
+                <div class="post-images">
+                    <img src="images/gaoshu1.png" alt="image1">
+                    <img src="images/gaoshu2.png" alt="image2">
+                    <img src="images/gaoshu3.png" alt="image3">
+                </div>
+                <div class="post-info">桃籽 ♦ 13分钟前</div>
+            </div>
+            <div class="post-item">
+                <div class="post-title">线性代数吧</div>
+                <div class="post-info">
+                    <span>线性齐次方程组求解</span>
+                    <span class="post-hot">1775</span>
+                </div>
+                <div class="post-info">具体知识点如下：</div>
+                <div class="post-images">
+                    <img src="images/xiandai1.png" alt="image4">
+                    <img src="images/xiandai2.png" alt="image5">
+                    <img src="images/xiandai3.png" alt="image6">
+                </div>
+                <div class="post-info">前尘问故🌿 20分钟前</div>
+            </div>
+            <div class="post-item">
+                <div class="post-title">旅游吧</div>
+                <div class="post-info">
+                    <span>外滩太漂亮啦！今天刚看完，下周还想去，有一起的uu吗</span>
+                    <span class="post-hot">756</span>
+                </div>
+                <div class="post-images">
+                    <img src="images/waitan1.png" alt="image7">
+                    <img src="images/waitan2.png" alt="image8">
+                    <img src="images/waitan3.png" alt="image9">
+                </div>
+                <div class="post-info">长的帅有错吗 49分钟前</div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</div>
+<!-- //post page -->
+
+
+
+<!-- footer -->
+<footer>
+	<div class="agileits-w3layouts-footer">
+		<div class="container">
+			<div class="col-md-4 w3-agile-grid">
+				<h5>About Us</h5>
+				<p>本项目由同济大学软件学院杨烜赫、付宝莹、霍钇澄和张凯四人协助完成，如有问题请联系邮箱2252709@tongji.edu.cn</p>
+				<div class="footer-agileinfo-social">
+					<ul>
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-rss"></i></a></li>
+						<li><a href="#"><i class="fa fa-vk"></i></a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="col-md-4 w3-agile-grid">
+				<h5>Address</h5>
+				<div class="w3-address">
+					<div class="w3-address-grid">
+						<div class="w3-address-left">
+							<i class="fa fa-phone" aria-hidden="true"></i>
+						</div>
+						<div class="w3-address-right">
+							<h6>Phone Number</h6>
+							<p>+86 18937082731</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="w3-address-grid">
+						<div class="w3-address-left">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</div>
+						<div class="w3-address-right">
+							<h6>Email Address</h6>
+							<p>Email :<a href="mailto:example@email.com"> 2252709@tongji.edu.cn</a></p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="w3-address-grid">
+						<div class="w3-address-left">
+							<i class="fa fa-map-marker" aria-hidden="true"></i>
+						</div>
+						<div class="w3-address-right">
+							<h6>Location</h6>
+							<p> 上海市嘉定区曹安公路4800号同济大学嘉定校区
+							Telephone : +86 021-65982200
+							</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<div class="copyright">
+		<div class="container">
+			<p>Copyright &copy; 2024.Company name All rights reserved.</p>
+		</div>
+	</div>
+</footer>
+<!-- //footer -->
+
+
+
+<!-- js-scripts -->					
+<!-- js -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
+<!-- //js -->	
+<!-- //js-scripts -->
+
+<!-- start-smoth-scrolling -->
+<script src="js/SmoothScroll.min.js"></script>
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+	<!-- //here ends scrolling icon -->
+<!-- start-smoth-scrolling -->
+
+</body>
+</html>
